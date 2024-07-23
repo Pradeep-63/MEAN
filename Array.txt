@@ -1,0 +1,96 @@
+Q-What is array in JavaScript ?
+Ans:-JavaScript arrays are resizable and can contain a mix of different data types. 
+-Each value within an array is called an element. Elements are accessed by their index.
+-JavaScript arrays are zero-indexed the first element of an array is at index 0, the second is at index 1, and so on and the last element is at the value of the array's length property minus 1.
+Q-Declaration of an Array ?
+Ans:-There are basically two ways to declare an array i.e. Array Literal and Array Constructor.
+ 1. Creating an Array using Array Literal:
+   -Creating an array using array literal involves using square brackets [] to define and initialize the array. This method is concise and widely preferred for its simplicity.
+   Syntax:let arrayName = [value1, value2,value3, ...];
+ 2. Creating an Array using Array Constructor:
+   -The Array Constructor refers to a method of creating arrays by invoking the Array constructor function. This approach allows for dynamic initialization and can be used to create     arrays  with a specified length or elements.
+   Syntax:let arrayName = new Array();
+Q-How to access and modify array element ?
+Ans:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+// Accessing Array Elements
+ console.log(courses[0]);
+ console.log(courses[1]);
+ console.log(courses[2]);
+ console.log(courses[3]);
+//Modify Array Elements
+courses[2]= "Tailwind Css";
+console.log(courses);
+Q-JavaScript Array Methods.
+Ans:-
+ 1.length:the length property return the length of the given array.
+  Example:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+           // Accessing the Array Length
+            console.log(courses.length);//op-4
+ 2.Push:The push() method of Array instances adds the specified elements to the end of an array and returns the new length of the array.
+   Example:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+           //add the element at the end of the array
+            courses.push("javascript");
+            courses.push("ExpressJs","Mongodb");
+            console.log(courses)//op-[ 'HTML','CSS','Bootstrap','NodeJs','javascript','ExpressJs','Mongodb']
+ 3.Pop:The pop() method is used to remove elements from the end of an array and also return the deleted element  
+  Example:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+           // remove the element from the end of the array
+           courses.pop()
+           console.log(courses)//op-[ 'HTML', 'CSS', 'Bootstrap' ]
+ 4.Unshift:The unshift() method is used to add elements to the front of an Array.
+  Example:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+           //add the element at the begining of the array
+           courses.unshift("C++");
+           console.log(courses)//op-["C++","HTML", "CSS", "Bootstrap", "NodeJs"]
+ 5.Shift:The shift() method is used to remove elements from the beginning of an array 
+  Example:let courses = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+           //remove the element from the begining of the array
+           courses.shift();
+           console.log(courses)//op-["CSS", "Bootstrap", "NodeJs"]          
+ 6.concat:The concat() method creates a new array by merging (concatenating) existing arrays.
+  Example:let course1 = ["HTML", "CSS", "Bootstrap", "NodeJs"]
+          let course2=["C", "C++", "Java", "Python"]
+           //merge two array into a single array
+           let courses=course1.concat(course2);
+           console.log(courses)//op-["HTML","CSS", "Bootstrap", "NodeJs","C", "C++", "Java", "Python"]   
+7.map:The map() method in JavaScript creates a new array by applying a function to each element of the original array.
+ Example:const numbers = [1, 2, 3, 4];
+       const doubled = numbers.map(num => num * 2);
+       console.log(doubled); // Output: [2, 4, 6, 8]
+8.filter:The filter() in JavaScript is used to create a new array with all elements that pass a test implemented by the provided function. It is useful for selecting a subset of elements from an array based on certain criteria.
+ Example:const ages = [32,33,18,16,11,17,40];
+        const result = ages.filter((age)=>{
+        if(age>=18){
+        return age
+       }
+       });
+      console.log(result);
+9.Find:The find() method of Array instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+Example:const array1 = [5, 12, 8, 130, 44]; 
+       const found = array1.find((element) => element > 10);
+       console.log(found);//op-12
+10.foreach:The forEach() method of Array instances executes a provided function once for each array element.It will always return undefiend.
+ Example:const array1 = ['a', 'b', 'c'];
+ array1.forEach((element) => console.log(element));
+11.includes:The include methods search every element in the array if it find the given element then it will return true if not found in the entire array then it will return false.
+Example:
+   const array1 = [1, 2, 3];
+   console.log(array1.includes(2));//true
+   const pets = ['cat', 'dog', 'bat'];
+   console.log(pets.includes('cat'));//true
+    console.log(pets.includes('at'));//false
+12.findIndex:The findIndex() method of Array instances returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.
+Example:const arr=[1,2,3,4,5];
+        const element=arr.findIndex((el)=>el>2)
+        console.log(element);
+13.splice:The splice method in JavaScript is used to add, remove, or replace elements in an array. It modifies the original array and returns an array of the deleted elements.
+ Syntax:splice(start, deleteCount, item1,item2)
+ Example: 
+   const myFish = ["angel", "clown", "mandarin", "sturgeon"];
+   const removed = myFish.splice(2, 0, "drum");//["angel", "clown","drum","mandarin", "sturgeon"];
+    
+14.Slice:The slice() method of Array instances returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
+Syntax:slice(strat(included),end(excluded))//returns the portion of the array
+Example:
+   const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+   const citrus = fruits.slice(1, 3);//["orange","Lemon"]
