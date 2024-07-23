@@ -1,0 +1,30 @@
+Q-What is packages ?
+Ans:-In Node.Js, a package is a collection of JavaScript files which is used to perform specific task.These packages are designed to be reused across different project ,making it easier to add different functionality without writing it from scratch.
+Q-Most popular packages in Node.Js ?
+Ans:-The most popular packages of NodeJs is
+   1.Express
+   2.mongoose
+   3.nodemailer
+   4.nodemon
+   5.dotenv
+Q-Benefits of packages in node.js ?  
+Ans:-
+ 1.Code Reusability:-We can reuse the existing package in our poject.
+ 2.Time saving:-Speeds up developers by providing prebuilt solution for various tasks, such as authentication.
+ 3.Modularity: Packages allow developers to break down complex applications into smaller, manageable pieces. 
+Q-Package.json file ?
+Ans:-The package.json file is a crucial part of any Node.js project. It contains metadata about the project and its dependencies, scripts, version, and other relevant information. Here is a breakdown of its main components:
+   {
+  "name": "name of the project",
+  "version": "the version of the application",
+  "description": "description of your project",
+  "main": "the entry point of the application",
+  "author": "Your Name <your.email@example.com>",
+  "license": "ISC",
+  "dependencies":"these are the packages required to run the application along with their version.
+  
+  "devDependencies":"these are the package required only for development and testing packages.
+  }
+ Q-Package_lock.json file ?
+ Ans:-The package-lock.json file is an automatically generated file that npm creates in a Node.js project. It is used to ensure that the dependencies are installed exactly as specified. This file provides a detailed description of the entire dependency tree, including the specific versions of each package and their dependencies. 
+
