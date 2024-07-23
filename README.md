@@ -13,3 +13,9 @@
 - **What is the use of .env file?**
 - **Example of .env file?**
 - **How to run javascript file using NodeJs**
+## 3.Packages
+- **What is Packages ?**
+- **Most Popular Packages ?**
+- **Benefits of Packages ?**
+- **Package.json file ?**
+- **Package-lock.json file ?**
