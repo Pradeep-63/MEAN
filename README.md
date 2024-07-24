@@ -13,7 +13,6 @@
   You can install nodejs and npm easily with apt install, just run the following commands.
   ```sh
       $ sudo apt install nodejs
-    
    ``` 
 
  ```sh
@@ -23,7 +22,6 @@
 
 ```sh
        $ node --version
-    
    ``` 
 
  ```sh
