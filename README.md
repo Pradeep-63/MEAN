@@ -1,4 +1,10 @@
-
+## Setting up the environment
+- **Install NodeJs in ubuntu?**
+- **What is an .env file in NodeJs ?**
+- **What is the use of .env file?**
+- **Example of .env file?**
+- **How to run javascript file using NodeJs**
+***
 ### REQUIREMENTS TO RUN NODE.JS
 ***
 
