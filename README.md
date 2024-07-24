@@ -39,7 +39,7 @@
  ```
 **step-3:Switch Branch:**
 ```bash
-   $ git checkout MEAN-4
+   $ git checkout MEAN-1
  ```
 **step-4:Install npm packages:**
 ```bash
