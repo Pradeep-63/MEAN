@@ -1,15 +1,22 @@
 function distictArray(arrayofobj){
-    let arr1=new Array();
-    let arr2=new Array();
+    let flowers=new Array();
+    let fruits=new Array();
     arrayofobj.forEach((element) => {
-      if(!arr1.includes(element.type)){
-            arr1.push(element.type);
-        }
-      if(!arr2.includes(element.name)){
-          arr2.push(element.name);
+     if(element.type === "flower"){
+      if(!flowers.includes(element.name)){
+        
+        flowers.push(element.name);
        }
+     }
+     else{
+      if(!fruits.includes(element.name)){
+        fruits.push(element.name);
+      }
+     }
+      
+      
     });
-    console.log(arr1);
-    console.log(arr2);
+    console.log(flowers);
+    console.log(fruits);
   }
   module.exports=distictArray;
