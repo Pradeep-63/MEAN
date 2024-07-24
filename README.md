@@ -23,7 +23,7 @@
    If the installation was successful, you should be able to run the following    command.
 
 ```sh
-       $ node --version
+     $ node --version
    ``` 
 
  ```sh
@@ -45,7 +45,7 @@
 ```bash
    $ npm install
  ```
-**step-5:Run Node.Js script:**
+**step-5:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
