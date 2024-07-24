@@ -3,6 +3,7 @@
 - **Declaration of an Array ?**
 - **How to access and modify array element ?**
 - **JavaScript Array Methods ?**
+***
 ### REQUIREMENTS TO RUN NODE.JS
 ***
 
