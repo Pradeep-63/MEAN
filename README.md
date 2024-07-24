@@ -1,8 +1,8 @@
 ## 4.Array Function
-- **What is Array in Js ?**
-- **Declaration of an Array ?**
-- **How to access and modify array element ?**
-- **JavaScript Array Methods ?**
+- **[What is Array in Js ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-4/Array.txt)**
+- **[Declaration of an Array ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-4/Array.txt)**
+- **[How to access and modify array element ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-4/Array.txt)**
+- **[JavaScript Array Methods ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-4/Array.txt)**
 ***
 ### REQUIREMENTS TO RUN NODE.JS
 ***
@@ -38,11 +38,11 @@
 ```bash
    $ git checkout MEAN-4
  ```
-**step-4:Install npm packages:**
+**step-4:Install dependencies:**
 ```bash
    $ npm install
  ```
-**step-5:Run Node.Js script:**
+**step-5:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
