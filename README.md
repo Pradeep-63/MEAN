@@ -1,9 +1,9 @@
 ## Setting up the environment
-- **Install NodeJs in ubuntu?**
-- **What is an .env file in NodeJs ?**
-- **What is the use of .env file?**
-- **Example of .env file?**
-- **How to run javascript file using NodeJs**
+- **[Install NodeJs in ubuntu?](https://github.com/Pradeep-63/MEAN/edit/MEAN-2/Env.txt)**
+- **[What is an .env file in NodeJs ?](https://github.com/Pradeep-63/MEAN/edit/MEAN-2/Env.txt)**
+- **[What is the use of .env file?](https://github.com/Pradeep-63/MEAN/edit/MEAN-2/Env.txt)**
+- **[Example of .env file?](https://github.com/Pradeep-63/MEAN/edit/MEAN-2/Env.txt)**
+- **[How to run javascript file using NodeJs](https://github.com/Pradeep-63/MEAN/edit/MEAN-2/Env.txt)**
 ***
 ### REQUIREMENTS TO RUN NODE.JS
 ***
@@ -39,11 +39,11 @@
 ```bash
    $ git checkout MEAN-2
  ```
-**step-4:Install npm packages:**
+**step-4:Install dependencies:**
 ```bash
    $ npm install
  ```
-**step-5:Run Node.Js script:**
+**step-5:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
