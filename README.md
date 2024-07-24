@@ -1,9 +1,9 @@
 ## Packages
-- **What is Packages ?**
-- **Most Popular Packages ?**
-- **Benefits of Packages ?**
-- **Package.json file ?**
-- **Package-lock.json file ?**
+- **[What is Packages ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-3/packages.txt)**
+- **[Most Popular Packages ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-3/packages.txt)**
+- **[Benefits of Packages ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-3/packages.txt)**
+- **[Package.json file ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-3/packages.txt)**
+- **[Package-lock.json file ?](https://github.com/Pradeep-63/MEAN/blob/MEAN-3/packages.txt)**
 ***
 ### REQUIREMENTS TO RUN NODE.JS
 ***
@@ -39,11 +39,11 @@
 ```bash
    $ git checkout MEAN-3
  ```
-**step-4:Install npm packages:**
+**step-4:Install dependencies:**
 ```bash
    $ npm install
  ```
-**step-5:Run Node.Js script:**
+**step-5:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
