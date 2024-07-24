@@ -15,19 +15,42 @@ const shift=require("./shift");
 const unshift=require("./unshift")
 const slice=require("./slice");
 const splice=require('./splice');
-concat();
-filter();
-find();
-foreach();
-length();
-findIndex();
-includes();
-map();
-push();
-pop();
-shift();
-unshift();
-slice();
-splice();
+const sumOfNumber=require('./sumOfNumber');
+const distictArray=require('./distinctArray')
+// concat();
+// filter();
+// find();
+// foreach();
+// length();
+// findIndex();
+// includes();
+// map();
+// push();
+// pop();
+// shift();
+// unshift();
+// slice();
+// splice();
+const arr=[
+    {
+      type:'flower',
+      name:'a'
+    },
+    {
+      type:'flower',
+      name:'a'
+    },
+    {
+      type:'fruit',
+      name:'mango'
+    },
+  {
+      type:'fruit',
+      name:'apple'
+    },
+  ];
+distictArray(arr)
+// const ans=sumOfNumber("1234");
+// console.log(ans);
 
 
