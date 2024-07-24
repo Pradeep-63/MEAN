@@ -35,7 +35,15 @@
    ```bash
    $ git clone https://github.com/Pradeep-63/MEAN.git
  ```
-**step-3:Run Node.Js script:**
+**step-3:Switch Branch:**
+```bash
+   $ git checkout MEAN-2
+ ```
+**step-4:Install npm packages:**
+```bash
+   $ npm install
+ ```
+**step-5:Run Node.Js script:**
 
    To run the  javascript file run the following command
   ```sh
