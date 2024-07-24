@@ -41,7 +41,7 @@
 ```bash
    $ git checkout MEAN-1
  ```
-**step-4:Install npm packages:**
+**step-4:Install dependencies:**
 ```bash
    $ npm install
  ```
