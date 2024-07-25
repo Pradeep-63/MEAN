@@ -50,7 +50,7 @@
    $ express appname --view=ejs
  ```
 
-**step-5:Start the server:**
+**step-6:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
