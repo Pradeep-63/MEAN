@@ -50,7 +50,7 @@ const arr=[
     },
   ];
 distictArray(arr)
-// const ans=sumOfNumber("1234");
-// console.log(ans);
+const ans=sumOfNumber("1234");
+console.log(ans);
 
 
