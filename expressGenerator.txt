@@ -1,0 +1,35 @@
+Q-What is Express Generator ?
+Ans:Express Generator is a Node.js Framework like ExpressJS which is used to create express Applications easily and quickly. It acts as a tool for generating express applications.Express Generator is a command-line tool for quickly creating an Express.js application skeleton, providing a structured foundation with pre-configured settings, middleware, and directories, enabling rapid development of web applications.
+Q-Benefits of Express-generator ?
+Ans:-
+ 1.Time-saving: The generator creates a new project with a ready-to-use structure in seconds, saving you the time and effort required to set up a project from scratch.
+ 2.Modular Structure: It organizes the application into modules, with separate directories for routes, views, and public assets, promoting a clean separation of concerns.
+ 3.Pre-configured Middleware: Common middleware, such as body parsers and logging, are pre-configured, which simplifies initial setup and usage.
+Q-Steps to install express-generator ?
+Ans:-
+   1.Install the Express Generator globally:-npm install -g express-generator
+   2.Generate a New Application:express appname --view=ejs
+   3.Navigate to the Application Directory:cd appname
+   4.Install the Dependencies:npm install
+   5.open the folder in VsCode
+   6.Run the Application:npm start
+Q-Express Generator folder structure ?
+Ans:-
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.pug
+    ├── index.pug
+    └── layout.pug
+
+     
