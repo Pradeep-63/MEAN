@@ -17,20 +17,20 @@ const slice=require("./slice");
 const splice=require('./splice');
 const sumOfNumber=require('./sumOfNumber');
 const distictArray=require('./distinctArray')
-// concat();
-// filter();
-// find();
-// foreach();
-// length();
-// findIndex();
-// includes();
-// map();
-// push();
-// pop();
-// shift();
-// unshift();
-// slice();
-// splice();
+concat();
+filter();
+find();
+foreach();
+length();
+findIndex();
+includes();
+map();
+push();
+pop();
+shift();
+unshift();
+slice();
+splice();
 const arr=[
     {
       type:'flower',
