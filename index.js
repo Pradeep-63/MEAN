@@ -17,20 +17,21 @@ const slice=require("./slice");
 const splice=require('./splice');
 const sumOfNumber=require('./sumOfNumber');
 const distictArray=require('./distinctArray')
-concat();
-filter();
-find();
-foreach();
-length();
-findIndex();
-includes();
-map();
-push();
-pop();
-shift();
-unshift();
-slice();
-splice();
+const testTask1=require('./testTask1');
+// concat();
+// filter();
+// find();
+// foreach();
+// length();
+// findIndex();
+// includes();
+// map();
+// push();
+// pop();
+// shift();
+// unshift();
+// slice();
+// splice();
 const arr=[
     {
       type:'flower',
@@ -50,7 +51,8 @@ const arr=[
     },
   ];
 distictArray(arr)
-const ans=sumOfNumber("1234");
-console.log(ans);
+console.log(testTask1(12, 1200,"Standard"));
+// const ans=sumOfNumber("1234");
+// console.log(ans);
 
 
