@@ -50,5 +50,4 @@ function getDiscountPrice(req,res){
   
       
 }
-// export default getDiscountPrice
 module.exports=getDiscountPrice
