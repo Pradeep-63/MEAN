@@ -7,6 +7,8 @@ const toUppercase=require('./toUpperCase');
 const split=require('./split');
 const includes=require('./includes');
 const IndexOf=require('./indexof')
+const subString=require('./subString');
+const subStr=require('./subStr');
 length("hello world");
 trim(' hello world  ');
 charAt("hello world");
@@ -16,3 +18,5 @@ toUppercase("hello world");
 split("hello");
 includes('hello, world!');
 IndexOf("hello, world!");
+subString("Mozilla");
+subStr("Mozilla")
