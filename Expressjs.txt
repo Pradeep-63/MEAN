@@ -1,0 +1,29 @@
+Q-What is express.Js ?
+Ans:-Express is a back-end web application framework for Node.js. It provides a set of tools and features that enable developers to build server-side applications that handle HTTP requests and responses, connect to databases, and perform other tasks. Express is designed to be flexible and modular, allowing developers to add middleware functions and customize the application to meet their specific needs.
+Q-Why we use expressJs ?
+Ans:-Express is a user-friendly framework that simplifies the development process of Node applications. It uses JavaScript as a programming language and provides an efficient way to build web applications and APIs. With Express, you can easily handle routes, requests, and responses, which makes the process of creating robust and scalable applications much easier.
+Q-Create a Application using Express.Js ?
+Ans:
+//server instantiate
+const express = require('express')
+const app = express()
+//port no
+const port = 3000
+app.get('/', (req, res) => {
+  res.status(200)
+  res.send('Hello World!')
+})
+app.get('/about', (req, res)=>{
+    res.status(200).send("<h1>This is about page</h1>");
+});
+//server listen at port no 3000
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+Q-Key Features of Express.js ?
+1.Routing:- Provides robust routing capabilities for creating RESTful APIs and managing different URL routes and HTTP methods.
+2.Middleware:- Supports middleware to handle requests, responses, and execute code at different stages in the request-response cycle.
+3.Templating:- Integrates with various templating engines like Pug, EJS, and Handlebars to dynamically render HTML pages.
+4.Static Files:- Efficiently serves static files like images, CSS, and JavaScript using the express.static middleware.
+5.Error Handling:- Offers built-in support for handling errors and managing them gracefully within the application.
+
