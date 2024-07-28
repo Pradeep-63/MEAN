@@ -1,14 +1,9 @@
-function sumOfNumber(num){
-  num=+num;
-  let number=num;
-   let ans=0;
-   while(number > 0){
-     let rem=number%10;
-     let div=number/10;
-     div=Math.floor(div);
-     ans=ans+rem;
-     number=div;
-   }
-   return ans;
-}
-module.exports=sumOfNumber;
+function sumOfNumber(number) {
+    number = +number;
+    if (number === 0) {
+      return 0;
+    }
+    return number % 10 + sumOfNumber(Math.floor(number / 10));
+  }
+  
+  module.exports = sumOfNumber;
