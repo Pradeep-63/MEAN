@@ -1,0 +1,51 @@
+Q-What is Coding standard ?
+Ans:-A coding standard is a set of guidelines, best practices, and conventions that developers follow when writing code. The primary goal of coding standards is to ensure that code is consistent, readable, maintainable, and reliable. By adhering to a common set of rules, developers can reduce errors, facilitate collaboration, and make it easier to understand and modify the codebase in the future.
+Q-Common elements of coding Standard ?
+1.Naming convention:-Naming conventions in coding standards provide guidelines for how to name variables, functions, classes, constants, and other identifiers in a consistent and meaningful way. 
+   I-Descriptive Names:Use meaningful and descriptive names that convey the purpose of the variable, function, or class.
+   example:-let userAge = 25;
+           function calculateTotalPrice() { ... }
+           class UserProfile { ... }
+
+   II-Case Conventions:Use different casing styles for different types of identifiers.
+      camelCase: For variables, functions, and object properties.
+      PascalCase: For classes and constructor functions.
+      UPPER_CASE: For constants.
+      example:-let firstName = 'John'; // camelCase for variables
+              function getUserInfo() { ... } // camelCase for functions
+              class UserAccount { ... } // PascalCase for classes
+              const MAX_USERS = 100; // UPPER_SNAKE_CASE for constants
+2.Commenting and documentation are essential components of coding standards that help make code more understandable, maintainable, and accessible to other developers.
+  Types of Comments:
+  I.Inline Comments:
+            Brief comments placed on the same line as the code they describe.
+            Used to explain specific parts of a line of code or provide quick context.
+            example:let result = calculateTotal(price, tax); // Calculate the total price including tax
+
+  II- Block Comments:Multi-line comments used to describe a section of code, often placed before complex or important code blocks.
+                    Used to provide detailed explanations or context.
+                    example:-/*
+                            * This function calculates the total price including tax.
+                            * It takes the price and tax rate as input and returns the total amount.
+                            */
+                           function calculateTotal(price, tax) {
+                           return price + (price * tax
+ 3.Error Handling:- Best practices for handling and logging errors.
+Use of try-catch blocks and error-handling middleware in frameworks like Express.js. 
+4.Version Control:- Guidelines for using version control systems (e.g., Git).
+Standards for commit messages, branching strategies, and code reviews.
+5.Code Structure:- Best practices for organizing code, such as modularization and separation of concerns.
+Guidelines for file and directory structures.
+
+Q-Advantages of Coding Guidelines ?
+Ans:-I- Coding guidelines increase the efficiency of the software and reduces the development time.
+    II-Coding guidelines help in detecting errors in the early phases, so it helps to reduce the extra cost incurred by the software project.
+    III-If coding guidelines are maintained properly, then the software code increases readability and understandability thus it reduces the complexity of the code.
+    IV-It reduces the hidden cost for developing the software.
+Q-Whats is solid principle ?
+Ans:-The SOLID principles are a set of design principles for object-oriented programming that aim to make software more understandable, flexible, and maintainable. SOLID is an acronym that stands for:
+1.Single Responsibility Principle (SRP): A class should have only one reason to change, meaning it should have only one job or responsibility.
+2.Open/Closed Principle (OCP): Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means you should be able to add new functionality without changing existing code.
+3.Liskov Substitution Principle (LSP): Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program. In other words, subclasses should fulfill the contracts of their parent classes.
+4.Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use. This means creating specific interfaces for different clients rather than a single general-purpose interface.
+5.Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions.
