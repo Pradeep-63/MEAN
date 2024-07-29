@@ -40,5 +40,5 @@
 
    To run the  javascript file run the following command
   ```sh
-   $ npm start
+   $ npm run dev
    ```
