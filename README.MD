@@ -30,7 +30,7 @@
  ```
 **step-3:Switch Branch:**
 ```bash
-   $ git checkout MEAN-80
+   $ git checkout MEAN-8
  ```
 **step-4:Install dependencies:**
 ```bash
