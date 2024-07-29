@@ -1,17 +1,15 @@
 const express=require('express');
 const app=express();
 require('dotenv').config();
-//middleware
 app.use(express.json());
+const route=require('./routes/auth')
 //get route
 app.get('/',(req,res)=>{
-    res.send("Welcome to Home Page");
+    res.send("This is Homepage");
 })
-//post route
-app.post('/profile',(req,res)=>{
-    const {name,email}=req.body;
-    res.send({name,email});
-})
+//middleware authentication
+app.use('/api/v1',route)
+
 app.listen(process.env.PORT,()=>{
     console.log(`server started at port no ${process.env.PORT}`);
 })
