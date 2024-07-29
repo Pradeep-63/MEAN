@@ -32,11 +32,11 @@
 ```bash
    $ git checkout MEAN-40
  ```
-**step-5:Install dependencies:**
+**step-4:Install dependencies:**
 ```bash
    $ npm install
  ```
-**step-6:Start the server:**
+**step-5:Start the server:**
 
    To run the  javascript file run the following command
   ```sh
