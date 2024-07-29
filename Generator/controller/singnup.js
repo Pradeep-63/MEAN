@@ -1,4 +1,5 @@
 function SignUp(req,res){
+    console.log('test2  ')
     const {username,email,password}=req.body;
      //name validation 
     const usernameRegex=/^[A-Za-z]+$/;
