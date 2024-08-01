@@ -1,0 +1,44 @@
+Q-Difference between MySQL and MongoDB?
+Ans:-
+MySQL:
+-MySQL is an open source relational database management system.
+-In MySQL,each individual records are stored as a rows in a table.
+-SQL database can be scaled vertically.
+-MySQL requires a schema definition for the tables in the database.
+-MySQL uses SQL which is a structure query language.
+-It has primary key constraints.
+MongoDB:
+-MongoDB is an open source non-relational database management
+system.
+-In MongoDB, each individual records are stored as a documents.
+-MongoDB database can be scaled both vertically and horizontally.
+-MongoDB does not require any prior schema.
+-MongoDB uses the MongoDB query language(MQL).
+-it does not has primary key constraints,instead object id is system
+generated id which is unique to each document.
+Q-Introduction to MongoDb ?
+Ans:-
+-MongoDB is a powerful NoSQL database designed for storing and managing large sets of unstructured or semi-structured data. It is known for its high performance, flexibility, and scalability, making it a popular choice for modern applications
+-MongoDB is a document-oriented database, which means it stores data in documents rather than in rows and columns as in traditional relational databases. These documents are stored in a format called BSON (Binary JSON), which allows for rich data types and easy data representation.
+Q-Key concepts of MongoDb ?
+Ans-
+Database: A container for collections. Each database has its own set of files on the file system.
+Collection: A group of MongoDB documents. A collection is the equivalent of a table in a relational database. 
+Document: A record in a MongoDB collection and the basic unit of data. Documents are analogous to rows in a relational database table. Each document is a set of key-value pairs.
+Q-Why we use MongoDb ?
+Ans:-MongoDB is used for various reasons, primarily due to its flexibility, scalability, and performance advantages over traditional relational databases. Here are some key reasons why MongoDB is popular:
+1.Document:-Oriented: MongoDB stores data in flexible, JSON-like documents (BSON), allowing fields to vary from document to document and accommodating data of any structure.
+2.Indexing: -For efficient searching Indexing is a must and MongoDB uses it to process huge volumes of data in very less time.
+3.JSON-like Format: The JSON-like document format makes it easy for developers to work with data in MongoDB, especially those familiar with JSON from web development.
+4.Load balancing. MongoDB can be used to run over multiple servers.
+5.Schema-less. MongoDB is a schema-less database, which means the database can manage data without the need for a blueprint.
+6.Scalability. MongoDB supports vertical and horizontal scaling. Vertical scaling works by adding more power to an existing machine, while horizontal scaling works by adding more machines to a user's resources.
+Q-Where do we use MongoDB ?
+Ans:-MongoDB is preferred over RDBMS in the following scenarios:
+ I.Big Data: If we have huge amount of data to be stored in tables, think of MongoDB before RDBMS databases. MongoDB has built-in solution for partitioning and sharding our database.
+ II.Unstable Schema: Adding a new column in RDBMS is hard whereas MongoDB is schema-less. Adding a new field does not effect old documents and will be very easy.
+ III.Aggregation Framework: Powerful tools for real-time data aggregation and analysis.
+Q-Advantages of MongoDB .
+Ans:- MongoDB offers several potential benefits:
+1.Schema-less. Like other NoSQL databases, MongoDB doesn't require predefined schemas. It stores any type of data. This gives users the flexibility to create any number of fields in a document, making it easier to scale MongoDB databases compared to relational databases.
+2.Scalability. A core function of MongoDB is its horizontal scalability, which makes it a useful database for companies running big data applications
