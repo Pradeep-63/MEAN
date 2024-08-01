@@ -1,0 +1,32 @@
+Q-How to Install and Configure MongoDB in Ubuntu?
+Ans:- Steps to Install and Configure MongoDB in Ubuntu:
+  MongoDB can be installed on Ubuntu with the use of the following commands. These commands are easy to run on the terminal and make the installation process handy. Follow the steps given  below to install MongoDB:
+ Step 1: First you need to update and upgrade your system repository to install MongoDB. Type the following command in your terminal and then press Enter.
+       - sudo apt update && sudo apt upgrade
+ Step 2: Now, install the MongoDB package using ‘apt‘. Type the following command and press Enter.
+     - sudo apt-get install -y mongodb-org
+Step 3: Check the service status for MongoDB with the help of following command:
+     -sudo systemctl status mongodb
+Step 4: Now check if the installation process is done correctly and everything is working fine. Go through the following command:
+   - mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+Step 5: MongoDB services can be started and stopped with the use of following commands: To stop running the MongoDB service, use command :
+    -sudo systemctl stop mongodb
+    MongoDB service has been stopped and can be checked by using the status command:
+    -sudo systemctl status mongodb
+    As it can be seen that the service has stopped, to start the service we can use :
+    -sudo systemctl start mongodb
+Step 6: Accessing the MongoDB Shell
+MongoDB provides a command-line interface called the MongoDB shell, which allows you to interact with the database.
+To access the MongoDB shell, simply type the following command in your terminal:  
+   - mongosh
+Q-Download and Install Compass ?
+Ans:-
+  step 1:Download MongoDB Compass.
+    -wget https://downloads.mongodb.com/compass/mongodb-compass_1.43.4_amd64.deb
+  step 2: sudo apt install ./mongodb-compass_1.43.4_amd64.deb 
+      If your Linux distribution does not support using apt for installing local .deb files, run the following lines to install MongoDB Compass:
+    -sudo dpkg -i mongodb-compass_1.43.4_amd64.deb
+     sudo apt-get install -f # This installs required compass dependencies
+  step 3:Start MongoDB Compass.
+     -mongodb-compass
+    
