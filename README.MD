@@ -1,7 +1,7 @@
 ## QUERIES
-**[1.QUERIES IN MONGODB]()**
+**[1.QUERIES IN MONGODB](https://github.com/Pradeep-63/MEAN/blob/MEAN-56/queries.txt)**
 
-**[1.OPERATORS IN MONGODB]()**
+**[1.OPERATORS IN MONGODB](https://github.com/Pradeep-63/MEAN/blob/MEAN-56/queries.txt)**
 ## REQUIREMENTS TO RUN NODE.JS
 ***
 
