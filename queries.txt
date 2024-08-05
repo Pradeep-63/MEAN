@@ -101,6 +101,43 @@ ans:-To check field existence in MongoDB, we can use the $exists operator. This 
   syntax:{ field: { $exists: <boolean> } }
   example: To find documents where the age field exists and is not equal to 18.
   db.students.find({ age: { $exists: true, $ne: 18 } })
+Q-COMMANDS:
+1.limit:-The limit() method in MongoDB is used to specify the maximum number of documents that should be returned in a query result.
+ -It is particularly useful for controlling the size of the result set especially when dealing with large collections.
+ -By using limit(), we can restrict the number of documents retrieved, which can improve performance and reduce the load on the client.
+ syntax:db.collectionName.find(<query>).limit(<number>)
+ example:db.users.find().limit(2)
+2.count:-In MongoDB, the count command is used to count the number of documents in a collection that match a specified query. There are several ways to perform a count operation in MongoDB. Here are the most commonly used methods:
+ I.countDocuments:This is the preferred method for counting documents in MongoDB.                 
+ syntax:-db.collection.countDocuments(query);
+ example:db.users.countDocuments({ age: { $gt: 20 } });
+ II.The count method is deprecated in newer versions of MongoDB (4.0+), but it is still used in some older codebases.
+ syntax:db.collection.count(query);
+ example:db.users.count({ age: { $gt: 20 } });
+3.sort:-In MongoDB, the sort() method is used to specify the order in which the query returns matching documents from a collection. It allows users to arrange documents in either ascending (1) or descending (-1) order based on the values of one or more fields.
+syntax:db.collection.find(query).sort(sortCriteria);
+       db.collection.find().sort({ field1: 1, field2: -1 })
+example:db.student.find().sort({age:1})// Ascending Order
+        db.student.find().sort({age:-1})// Descending Order
+        db.users.find({ age: { $gt: 20 } }).sort({ age: 1, name: -1 });
+
+4.distinct:-The distinct() method in MongoDB is a powerful tool used to find unique values for a specified field across a single collection.
+syntax:- db.Collection_name.distinct(field : <string>)
+example: db.student.distinct("name")
+         db.student.distinct("marks")
+5.populate:In MongoDB, Population is the process of replacing the specified path in the document of one collection with the actual document from the other collection.         
+ Here's a basic overview of how populate works: 
+  -Defining Schemas with References: First, define schemas where one schema references another.
+  -Using populate in Queries: When querying the collection, use the populate method to fill in the referenced documents.
+6.like operator:To query MongoDB with a “like” operator equivalent, we can use the $regex operator along with regular expressions. However, MongoDB offers several methods to query MongoDB with “like” are defined below:
+1.Using $regex Expressions
+2.Using the Regular Operator
+syntax:db.collection.find({ "field": { $regex: /pattern/i } });
+ collection: The name of the MongoDB collection we want to query.
+“field”: The field within the documents we want to query.
+/pattern/: The regular expression pattern we want to match.
+i: An optional flag that makes the pattern case-insensitive.
+example: db.users.find({ "name": { $regex: /john/i } });
   
 
 
