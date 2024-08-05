@@ -1,0 +1,118 @@
+Q-Queries in MongoDb ?
+Ans:-CRUD operation in mongodb:
+CREATE:
+ 1.insertOne-The insertOne method is used to insert a single document into a collection.
+ Syntax:db.collection_name.insertOne(document)
+ example:db.users.insertOne({
+  name: "pradeep jana",
+  age: 22,
+  email: "pradeep.doe@example.com"
+  })
+
+ 2.insertMany-The insertMany method is used to insert multiple documents into a collection.
+ syntax:db.collection_name.insertMany(documents)
+ example:db.users.insertMany([
+  {
+    name: "pradeep",
+    age: 22,
+    email: "pradeep@example.com"
+  },
+  {
+    name: "shishir",
+    age: 22,
+    email: "shishir@example.com"
+  }
+ ])
+ sort,limit,count,distict,populate,projection
+ find:like query
+READ:
+ 1.find:The find method is used to retrieve multiple documents from a collection that match a query.
+ syntax:db.collection_name.find(query)
+ example:db.users.find({ age: { $gt: 25 } })
+ 2.findone:The findOne method is used to retrieve a single document from a collection that matches a query.
+ synatx:db.collection_name.findOne(query)
+ example:db.users.findOne({ name: "pradeep jana" })
+UPDATE:
+1.updateone:The updateOne method is used to update a single document that matches the given filter criteria.
+syntax:db.collection_name.updateOne(filter, update)
+example:db.users.updateOne(
+   { name: "pradeep jana" },
+   { $set: { age: 22 } }
+   )
+2.updatemany:The updateMany method is used to update multiple documents that match the given filter criteria.
+synatx:db.collection.updateMany(filter, update)
+example:db.users.updateMany(
+   { age: { $lt: 18 } },
+   { $set: { status: "minor" } }
+  )
+DELETE:
+1.deleteOne:The deleteOne method is used to remove a single document from a collection that matches the given filter criteria.
+syntax:db.collection_name.deleteOne(filter)
+example:db.users.deleteOne(
+  { name: "pradeep jana" }
+)
+2.deleteMany:The deleteMany method is used to remove multiple documents from a collection that match the given filter criteria.
+syntax:db.collection_name.deleteMany(filter)
+example:db.users.deleteMany({ status: "inactive" })
+Q-Operators in Mongodb ?
+Ans:
+COMPARISION OPERATOR
+ 1.$eq:The $eq operator matches documents where the value of the field is equal to the specified value.
+ synatx:{field: {$eq: value}}
+ example:db.employee.find({salary: {$eq: 30000}})
+ 2.$ne:The $ne operator selects those documents where the field value is not equal to the given value.
+ synatx:{field: {$ne: value}}
+ example:db.employee.find({experienceYear: {$ne: 2}})
+ 3.$gt:It is used to find documents where the value in the field is greater than(>) a given value.
+ syntax:{field: {$gt: value}}
+ example:db.employee.find({salary: {$gt: 35000}})
+ 4.$gte:$gte operator selects those documents where the field value is greater than equals to(>=) the given value.
+ syntax:{field: {$gte: value}}
+ example:db.employee.find({salary: {$gte: 35000}})
+ 5.$lt:The $lt operator selects the documents with a value less than (<) the given value.
+   syntax:{field: {$lt: value}}
+   example:db.employee.find({salary: {lt:35000}})
+ 6.$lte:$lte operator selects those documents where the field value is less than equal to (<=) the given value.
+  syntax:{field: {$lte: value}}
+  example:db.employee.find({salary: {$lte: 35000}})
+ 7.$in:The MongoDB $in operator is used to match documents where the value of a field equals any value in a specified array.
+  syntax:{field: {$in: [value1, value2, value3, ...]}}
+  example:db.employee.find({name: {$in: ["pradeep", "dibya"]}})
+8.$nin:The $nin operator selects those documents where the field value is not equal to any of the given values in the array and the field that does not exist.
+syntax:{field: {$nin: [value1, value2, value3, ...]}}
+example:db.course.find({language: {$nin: ["C#", "Python"]}})
+LOGICAL OPERATOR:
+1.$and: This operator is used to perform logical AND operation on the array of one or more expressions and select or retrieve only those documents that match all the given expression in the array. You can use this operator in methods like find(), update(), etc. according to your requirements.
+syntax:{ $and: [ { Expression1 }, { Expression2 }, ..., { ExpressionN } ] }
+example:db.student.find({$and: [{branch: "ECSE"}, 
+                            {joiningYear: 2020}]})
+2.$or: This operator is used to perform logical OR operation on the array of two or more expressions and select or retrieve only those documents that match at least one of the given expression in the array. 
+syntax:{ $or: [ { Expression1 }, { Expression2 }, ..., { ExpressionN } ] }
+example:db.employee.find({$or: [{branch: "ENCE"},
+                     {joiningYear: 2027}]})
+3.This operator is used to perform logical NOT operation on the specified operator expressions and select or retrieve only those documents that do not match the given operator expression. It also includes those documents that don’t contain the field. You can use this operator in methods like find(), update(), etc. according to your requirements.
+syntax:{ field: { $not: { operator-expression } } }
+example:db.employee.find({salary: {$not: {$gt: 2000}}})
+Q-How to check field existance in mongodb ?
+ans:-To check field existence in MongoDB, we can use the $exists operator. This operator allows us to query documents based on whether a particular field exists or does not exist.
+    This operator can take a boolean value (true or false):
+    true: It signifies that Matches documents that contain the field.
+    false: It signifies Matches documents that do not contain the field.
+  syntax:{ field: { $exists: <boolean> } }
+  example: To find documents where the age field exists and is not equal to 18.
+  db.students.find({ age: { $exists: true, $ne: 18 } })
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
