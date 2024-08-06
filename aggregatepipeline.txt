@@ -168,6 +168,43 @@ ans:db.sales.aggregate([
     $sort: { totalSalesAmount: -1 }
   }
 ]);
+//limit
+Q-limit:The $limit stage in MongoDB's aggregation pipeline is used to restrict the number of documents that pass through the pipeline to a specified number. This is useful when you only need a subset of the results, such as for pagination or to get the top N results.
+syntax:{ $limit: <positive 64-bit integer> }
+Q-products [
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 },
+  { "_id": 4, "name": "Monitor", "price": 300 },
+  { "_id": 5, "name": "Keyboard", "price": 50 }
+]
+example-1:To get the first 3 products:
+ans-db.products.aggregate([{
+ $limit:3
+}])
+example-2:Suppose you want to find products with a price greater than 500 and limit the result to 2 documents:
+ans-db.users.find([{
+  $match:{
+  price:{$gt:500}
+  }
+},
+{
+ $limit:2
+}
+])
+example-3:Suppose you want to sort the products by price in descending order and then limit the result to 3 documents:
+ans-db.products.aggregate([
+ {
+  $sort:{
+   price:-1
+  }
+ },
+ {
+ $limit:3
+ }
+
+])
+
 
 
 
