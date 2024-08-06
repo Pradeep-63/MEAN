@@ -487,6 +487,28 @@ ans:-db.products.aggregate([{
    priceAsString:{$toString:"$price"}
   }
 }])
+//toObjectId
+Q-toObjectId:The $toObjectId aggregation operator in MongoDB is used to convert a string to an ObjectId. This is useful when you have a string representation of an ObjectId and need to convert it to a proper ObjectId type for queries or other operations in your aggregation pipeline.
+syntax:
+{ $toObjectId: <expression> }
+
+example:user collection [
+  { "_id": "60c72b2f9b1d8e001c8e4d38", "name": "Alice" },
+  { "_id": "60c72b2f9b1d8e001c8e4d39", "name": "Bob" }
+]
+Aggregation Pipeline to Convert _id to ObjectId
+ans- db.users.aggregate([
+   {
+    $addFields: {
+      objectId: { $toObjectId: "$_id" }
+    }
+  }
+]);
+op-[
+  { "_id": "60c72b2f9b1d8e001c8e4d38", "name": "Alice", "objectId": ObjectId("60c72b2f9b1d8e001c8e4d38") },
+  { "_id": "60c72b2f9b1d8e001c8e4d39", "name": "Bob", "objectId": ObjectId("60c72b2f9b1d8e001c8e4d39") }
+]
+
 
 
 
