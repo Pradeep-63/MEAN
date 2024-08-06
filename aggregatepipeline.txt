@@ -259,6 +259,44 @@ ans-db.sales.aggregate([
  $limit:1
  }
 ])
+//count 
+Q:Count:The $count stage in MongoDB's aggregation pipeline is used to count the number of documents that are passed to it. The result is a single document that contains the count of the documents in the pipeline. This stage is often used at the end of a pipeline to determine the total number of documents that match the previous stages' criteria.
+syntax:{
+  $count: "<field>"
+}
+Q-products:[
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 },
+  { "_id": 4, "name": "Monitor", "price": 300 },
+  { "_id": 5, "name": "Keyboard", "price": 50 }
+]
+example-1:To count the total number of products:
+ans:-db.products.aggregate([{
+ $count:"totalProducts"
+}])
+example-2:Suppose you want to count the number of products with a price greater than 500:
+ans:-db.products.aggregate([{
+ $match:{price:{$gt:500}}
+},
+{
+$count:"expensiveProducts"
+}
+]
+)
+example-3:Suppose you want to sort the products by price in descending order, skip the first 2 products, and then count the remaining products:
+ans:-db.products.aggregate([{
+ $sort:{price:-1}
+},
+{
+ $skip:2
+},
+{
+ $count:"remainingProducts"
+}
+])
+
+
 
 
 
