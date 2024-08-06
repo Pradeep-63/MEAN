@@ -329,6 +329,86 @@ ans-db.products.aggregate([{
      }
 }])
 //lookup
+Q-lookup:-The $lookup stage in MongoDB's aggregation pipeline is used to perform a left outer join to another collection in the same database. This allows you to combine data from multiple collections into a single document.
+syntax:
+{
+  $lookup: {
+    from: "<foreignCollection>",
+    localField: "<fieldFromInputDocuments>",
+    foreignField: "<fieldFromForeignDocuments>",
+    as: "<outputArrayField>"
+  }
+}
+-from: The collection to join.
+-localField: The field from the input documents.
+-foreignField: The field from the documents in the from collection.
+-as: The name of the new array field to add to the input documents.
+Q-Suppose you have two collections: orders and customers.
+order:[
+  { "_id": 1, "product": "Laptop", "quantity": 2, "customerId": 1 },
+  { "_id": 2, "product": "Phone", "quantity": 1, "customerId": 2 },
+  { "_id": 3, "product": "Tablet", "quantity": 3, "customerId": 1 }
+]
+customer:[
+  { "_id": 1, "name": "Alice" },
+  { "_id": 2, "name": "Bob" }
+]
+example-1:To join the orders collection with the customers collection to add customer details to each order 
+db.order.aggregate([
+ {
+  $lookup:{
+   from:"customer",
+   localField:"customerId"
+   foreignField:"_id"
+   as:"customerDetails"
+  }
+ }
+])
+ example-2: -Unwinding the Joined Array: The $lookup stage adds the joined documents as an array. To flatten the results, you can use the $unwind stage:
+ans:- db.order.aggregate([
+ {
+  $lookup:{
+   from:"customer",
+   localField:"customerId"
+   foreignField:"_id"
+   as:"customerDetails"
+  }
+ },
+ {
+ $unwind:"customerDetails"
+ }
+])
+Q-products:[
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 }
+]
+example-3:To join orders with both customers and products:
+ans:db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customerId",
+      foreignField: "_id",
+      as: "customerDetails"
+    }
+  },
+  {
+    $unwind: "$customerDetails"
+  },
+  {
+    $lookup: {
+      from: "products",
+      localField: "product",
+      foreignField: "name",
+      as: "productDetails"
+    }
+  },
+  {
+    $unwind: "$productDetails"
+  }
+]);
+
 
 
 
