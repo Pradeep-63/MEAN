@@ -1,0 +1,100 @@
+Q-Aggregation in mongodb
+Ans:-An aggregation pipeline consists of one or more stages that process documents:
+-Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
+-The documents that are output from a stage are passed to the next stage.
+-An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
+1.$match:-The $match aggregation stage in MongoDB is used to filter documents in a collection. It passes only those documents that match the specified conditions to the next stage in the aggregation pipeline. This stage is similar to the find operation but is used within the context of an aggregation pipeline.
+Synatx:{$match: { <query> }}
+example:1
+db.users.aggregate([
+{ $match: { status: "A" } }
+])
+
+Key Points
+•  Optimization: Place $match as early as possible in the pipeline to reduce the number of documents processed in subsequent stages
+•  Index Usage: When $match is at the beginning of the pipeline, it can take advantage of indexes, similar to find operations.
+[
+  { "_id": 1, "name": "Alice", "age": 30, "city": "New York" },
+  { "_id": 2, "name": "Bob", "age": 25, "city": "San Francisco" },
+  { "_id": 3, "name": "Charlie", "age": 35, "city": "New York" },
+  { "_id": 4, "name": "Dave", "age": 28, "city": "Chicago" }
+]
+
+Example:2-To filter users who live in "New York":
+ans-db.users.aggregate([
+  {
+    $match: { city: "New York" }
+  }
+]);
+Example:3-To filter users who are older than 25 and live in "New York":
+ans-db.users.aggregate([
+  {
+    $match: {
+      city: "New York",
+      age: { $gt: 25 }
+    }
+  }
+]);
+example:4-To filter users who live in either "New York" or "Chicago":
+ans:-db.users.aggregate([
+  {
+    $match: {
+      $or: [
+        { city: "New York" },
+        { city: "Chicago" }
+      ]
+    }
+  }
+]);
+Q-products[
+  { "_id": 1, "name": "Laptop", "tags": ["electronics", "computers"] },
+  { "_id": 2, "name": "Phone", "tags": ["electronics", "mobile"] },
+  { "_id": 3, "name": "Desk", "tags": ["furniture"] }
+]
+example-5:To filter products that have the tag "electronics":
+ans:db.products.aggregate([
+ {
+  $match:{ 
+    tags:"electronics"
+  }
+ }
+])
+Q-orders[
+  {
+    "_id": 1,
+    "product": "Laptop",
+    "customer": { "name": "Alice", "city": "New York" },
+    "quantity": 1
+  },
+  {
+    "_id": 2,
+    "product": "Phone",
+    "customer": { "name": "Bob", "city": "San Francisco" },
+    "quantity": 2
+  },
+  {
+    "_id": 3,
+    "product": "Desk",
+    "customer": { "name": "Charlie", "city": "New York" },
+    "quantity": 1
+  }
+]
+example-6:To filter orders made by customers who live in "New York":
+ans:db.products.aggregate([{
+  $match:{ "customer.city":"New York"}
+}])
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
