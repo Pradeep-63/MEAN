@@ -204,6 +204,62 @@ ans-db.products.aggregate([
  }
 
 ])
+//skip
+Q-skip:The $skip stage in MongoDB's aggregation pipeline is used to skip a specified number of documents. This is useful for pagination or when you want to ignore a certain number of initial documents in the result set.
+syntax:{
+  $skip: <number>
+}
+Q-products:[
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 },
+  { "_id": 4, "name": "Monitor", "price": 300 },
+  { "_id": 5, "name": "Keyboard", "price": 50 }
+]
+example-1:To skip the first 2 products:
+ans-db.products.aggregate([
+  {
+    $skip: 2
+  }
+]);
+example-2:Suppose you want to find products with a price greater than 100, skip the first 2 documents, and limit the result to 2 documents:
+ans-db.products.aggregate([
+{
+  $match:{price:{$gt:100}}
+},
+{
+ $skip:2
+},
+{
+$limit:2
+}
+])
+Q-sales:[
+  { "_id": 1, "product": "Laptop", "amount": 1200 },
+  { "_id": 2, "product": "Laptop", "amount": 1300 },
+  { "_id": 3, "product": "Phone", "amount": 800 },
+  { "_id": 4, "product": "Phone", "amount": 900 },
+  { "_id": 5, "product": "Tablet", "amount": 600 }
+]
+example:To group the sales by product, calculate the total sales amount for each product, sort by total sales amount in descending order, skip the first group, and limit the result to 1 group:
+ans-db.sales.aggregate([
+ {
+  $group:{ 
+   _id:"$product",
+   totalSalesAmount:{$sum:"$amount"}
+  }
+ },
+ {
+  $sort:{totalSalesAmount:-1}
+ },
+ {
+ $skip:1
+ },
+ {
+ $limit:1
+ }
+])
+
 
 
 
