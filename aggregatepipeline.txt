@@ -83,6 +83,49 @@ example-6:To filter orders made by customers who live in "New York":
 ans:db.products.aggregate([{
   $match:{ "customer.city":"New York"}
 }])
+2.$group:The $group stage in MongoDB's aggregation framework is used to group documents by a specified key and perform aggregate functions on the grouped data. This is particularly useful for summarizing and analyzing data.
+Syntax
+{
+$group: {
+_id: <expression>, // Group key
+<field1>: { <accumulator1>: <expression1> },
+...
+}
+}
+Q-sales collection with following data
+[
+  { "_id": 1, "product": "Laptop", "amount": 1200, "quantity": 1 },
+  { "_id": 2, "product": "Laptop", "amount": 1300, "quantity": 2 },
+  { "_id": 3, "product": "Phone", "amount": 800, "quantity": 5 },
+  { "_id": 4, "product": "Phone", "amount": 900, "quantity": 3 },
+  { "_id": 5, "product": "Tablet", "amount": 600, "quantity": 1 }
+]
+example-1:To group the sales by product and calculate the total sales amount for each product:
+db.sales.aggregate([{
+ $group:{
+  _id:"$product",
+  totalSalesAmount:{$sum:"$amount"}
+ }
+}])
+example-2:To calculate the total quantity and average amount for each product:
+ans-db.products.aggregate([{
+ $group:{
+   _id:"$product",
+   totalQuantity:{$sum:"$quantity"},
+   avgAmount:{$avg:"$amount"}
+ }
+}])
+example-3:To count the number of sales records for each product:
+ans:- db.sales.aggregate([
+  {
+    $group: {
+      _id: "$product",
+      count: { $sum: 1 }
+    }
+  }
+]);
+
+
 
 
 
