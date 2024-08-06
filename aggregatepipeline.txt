@@ -470,6 +470,23 @@ op-[
   { "_id": 2, "name": "Bob", "courses": "Math" },
   { "_id": 3, "name": "Charlie" }  // Preserved despite empty 'courses' array
 ]
+//toString
+Q-toString:In MongoDB, the $toString aggregation operator is used to convert a value to a string. This can be particularly useful in cases where you need to manipulate or format fields as strings within an aggregation pipeline.
+syntax:{
+  $toString: <expression>
+}
+products:[
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 }
+]
+example-1:To convert the price field to a string:
+ans:-db.products.aggregate([{
+  $project:{
+   name:1,
+   priceAsString:{$toString:"$price"}
+  }
+}])
 
 
 
