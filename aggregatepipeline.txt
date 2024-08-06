@@ -408,6 +408,72 @@ ans:db.orders.aggregate([
     $unwind: "$productDetails"
   }
 ]);
+//unwind 
+Q-unwind:The $unwind stage in MongoDB's aggregation framework is used to deconstruct an array field from the input documents to output a document for each element of the array. This is particularly useful when you need to work with individual elements of an array within documents.
+Syntax
+{
+$unwind: {
+path: <field path>,
+includeArrayIndex: <string>, // Optional
+preserveNullAndEmptyArrays: <boolean> // Optional
+}
+}
+-path: The field path to the array field. This is required.
+-includeArrayIndex: The name of a new field to hold the array index of the element. This is optional.
+-preserveNullAndEmptyArrays: If true, outputs the document if the array is null, missing, or empty. This is optional.
+Q-student:[
+  { "_id": 1, "name": "Alice", "courses": ["Math", "Science", "English"] },
+  { "_id": 2, "name": "Bob", "courses": ["History", "Math"] },
+  { "_id": 3, "name": "Charlie", "courses": [] }
+]
+example:
+db.students.aggregate([
+  {
+    $unwind: "$courses"
+  }
+]);
+output:[
+  { "_id": 1, "name": "Alice", "courses": "Math" },
+  { "_id": 1, "name": "Alice", "courses": "Science" },
+  { "_id": 1, "name": "Alice", "courses": "English" },
+  { "_id": 2, "name": "Bob", "courses": "History" },
+  { "_id": 2, "name": "Bob", "courses": "Math" }
+]
+db.students.aggregate([
+{
+  $unwind:{
+   path:"$courses",
+   includeArrayIndex:"courseIndex"
+  }
+}
+])
+output:[
+  { "_id": 1, "name": "Alice", "courses": "Math", "courseIndex": 0 },
+  { "_id": 1, "name": "Alice", "courses": "Science", "courseIndex": 1 },
+  { "_id": 1, "name": "Alice", "courses": "English", "courseIndex": 2 },
+  { "_id": 2, "name": "Bob", "courses": "History", "courseIndex": 0 },
+  { "_id": 2, "name": "Bob", "courses": "Math", "courseIndex": 1 }
+]
+db.students.aggregate([
+  {
+    $unwind: {
+      path: "$courses",
+      preserveNullAndEmptyArrays: true
+    }
+  }
+]);
+op-[
+  { "_id": 1, "name": "Alice", "courses": "Math" },
+  { "_id": 1, "name": "Alice", "courses": "Science" },
+  { "_id": 1, "name": "Alice", "courses": "English" },
+  { "_id": 2, "name": "Bob", "courses": "History" },
+  { "_id": 2, "name": "Bob", "courses": "Math" },
+  { "_id": 3, "name": "Charlie" }  // Preserved despite empty 'courses' array
+]
+
+
+
+
 
 
 
