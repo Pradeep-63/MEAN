@@ -83,6 +83,7 @@ example-6:To filter orders made by customers who live in "New York":
 ans:db.products.aggregate([{
   $match:{ "customer.city":"New York"}
 }])
+//group
 2.$group:The $group stage in MongoDB's aggregation framework is used to group documents by a specified key and perform aggregate functions on the grouped data. This is particularly useful for summarizing and analyzing data.
 Syntax
 {
@@ -124,6 +125,50 @@ ans:- db.sales.aggregate([
     }
   }
 ]);
+//sort 
+3.$sort:The $sort stage in MongoDB's aggregation pipeline is used to order the documents based on a specified field or fields. The sorting can be done in ascending (1) or descending (-1) order.
+syntax:{
+  $sort: { <field1>: <sortOrder1>, <field2>: <sortOrder2>, ... }
+}
+Q-products with following field
+[
+  { "_id": 1, "name": "Laptop", "price": 1200 },
+  { "_id": 2, "name": "Phone", "price": 800 },
+  { "_id": 3, "name": "Tablet", "price": 600 },
+  { "_id": 4, "name": "Monitor", "price": 300 }
+]
+example-1:To sort the products by price in ascending order:
+ans:- db.products.aggregate([{
+ $sort:{
+  price:1
+ }
+}])
+example-2:To sort the products by price in descending order:
+ans:-db.products.aggregate([
+  {
+    $sort: { price: -1 }
+  }
+]);
+Q-sales [
+  { "_id": 1, "product": "Laptop", "amount": 1200 },
+  { "_id": 2, "product": "Laptop", "amount": 1300 },
+  { "_id": 3, "product": "Phone", "amount": 800 },
+  { "_id": 4, "product": "Phone", "amount": 900 },
+  { "_id": 5, "product": "Tablet", "amount": 600 }
+]
+example-3:To group the sales by product, calculate the total sales amount for each product, and then sort the result by total sales amount in descending order:
+ans:db.sales.aggregate([
+  {
+    $group: {
+      _id: "$product",
+      totalSalesAmount: { $sum: "$amount" }
+    }
+  },
+  {
+    $sort: { totalSalesAmount: -1 }
+  }
+]);
+
 
 
 
