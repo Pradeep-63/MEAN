@@ -508,7 +508,9 @@ op-[
   { "_id": "60c72b2f9b1d8e001c8e4d38", "name": "Alice", "objectId": ObjectId("60c72b2f9b1d8e001c8e4d38") },
   { "_id": "60c72b2f9b1d8e001c8e4d39", "name": "Bob", "objectId": ObjectId("60c72b2f9b1d8e001c8e4d39") }
 ]
-
+//
+$SIZE 
+$OBJECTTOARRAY
 
 
 
