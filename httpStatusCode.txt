@@ -1,0 +1,27 @@
+Q-Http response status code ?
+ans:-
+200 OK: Meaning: The request has succeeded. The content that was requested is delivered in the response.
+        Use Case: When a GET request is made to retrieve data.
+201 Created: Meaning: The request has been fulfilled and has resulted in the creation of a new resource.
+             Use Case: When a POST request creates a new resource.
+202 Accepted: The request has been accepted for processing, but the processing is not yet complete (useful for asynchronous operations).
+204 No Content: Meaning: The server successfully processed the request, but no content is returned.
+                Use Case: When a DELETE request successfully removes a resource.
+400 Bad Request: Meaning: The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax).
+                 Use Case: When a required field is missing or the request body is invalid.
+401 Unauthorized: Meaning: The request requires user authentication.
+                  Use Case: When authentication credentials are missing or invalid.
+403 Forbidden: Meaning: The server understands the request but refuses to authorize it.
+              Use Case: When the user is authenticated but does not have permission to access the resource.
+
+
+404 Not Found: Meaning: The requested resource could not be found but may be available in the future.
+               Use Case: When a requested resource does not exist.
+409 Conflict: Meaning: The request could not be completed due to a conflict with the current state of the resource.
+             Use Case: When a POST request is made with data that conflicts with existing data
+500 Internal Server Error:Meaning: A generic error message, given when an unexpected condition was encountered, and no more specific message is suitable.
+                         Use Case: When an unhandled error occurs on the server.
+502 Bad Gateway:Meaning: The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+               Use Case: When an API gateway or proxy server cannot get a valid response from the target server. 
+503 service unavialable:The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded.               
+               
