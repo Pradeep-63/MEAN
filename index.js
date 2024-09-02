@@ -2,6 +2,8 @@ const express=require('express')
 const app=express();
 const {dbConnect}=require('./config/database')
 require('dotenv').config();
+const swaggerUI=require('swagger-ui-express')
+const swaggerDocument = require('./swagger-output.json');
 const admin=require('./routes/admin')
 const Class=require('./routes/teacher')
 const parent=require('./routes/parent')
@@ -10,11 +12,11 @@ app.use(express.json())
 const PORT = process.env.PORT || 4000;
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
-app.use("/api/v1/users",admin)
-app.use('/api/v1/users/classes',Class)
-app.use('/api/v1/parents',parent)
-app.use('/api/v1/users/students',student)
-
+app.use("/api/v1",admin)
+app.use('/api/v1',Class)
+app.use('/api/v1',parent)
+app.use('/api/v1',student)
+app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerDocument))
 app.listen(PORT, () => {
     console.log(`app is running at portno ${PORT}`)
 })

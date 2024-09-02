@@ -10,10 +10,12 @@ require('dotenv').config()
 const addClassAndUpdateTeacher=async(req,res)=>{
     try {
         try {
-            const newClass = new Class(req.body);
-            const savedClass=await newClass.save();
+            // const newClass = new Class(req.body);
+            // const savedClass=await newClass.save();
+            const {name,teacherId}=req.body;
+            const savedClass=await Class.create(name,teacherId)
             //update the classId in teacher
-            await User.findByIdAndUpdate(req.body.teacherId,{classId:savedClass._id},{new:true})
+            await User.findByIdAndUpdate(teacherId,{classId:savedClass._id},{new:true})
             apiResponse(res,StatusCodes.CREATED,"class created succesfully",newClass)
         } catch (error) {
             apiResponse(res,StatusCodes.BAD_REQUEST,"invalid user details")

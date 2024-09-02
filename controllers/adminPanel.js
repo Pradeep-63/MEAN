@@ -53,7 +53,9 @@ const login=async(req,res)=>{
     const {email,password}=req.body;
     console.log(email,password);
     const user=await User.findOne({email}).lean();
-    
+    // if(req.cookies.token){
+    //     return apiResponse(res,StatusCodes.NOT_ACCEPTABLE,"you are already login")
+    // }
     if(!user){
         return apiResponse(res,StatusCodes.NOT_FOUND,"please sign up before login") 
     }
@@ -118,10 +120,11 @@ const deleteUser=async(req,res)=>{
         apiResponse(res,StatusCodes.INTERNAL_SERVER_ERROR,error.message)
     }
 }
+//pagination
 const getAllUser=async(req,res)=>{
     try {
-    const {role,name,email,limit = 5, page = 1 } = req.query;
-    const sort=parseInt(req.query.sort)|| 1;
+    const {role,name,email,limit = 5, page = 1,sortBy='createdAt' } = req.query;
+    const sort=parseInt(req.query.sort)|| -1;
     let matchStage = {}
     if (role) matchStage.role= { $regex: role, $options: 'i' };
     if (name) matchStage.name = { $regex: name, $options: 'i' };
@@ -138,7 +141,7 @@ const getAllUser=async(req,res)=>{
    } 
     const usersPipeline = [
       { $match: matchStage },
-      { $sort: { name:sort  } },
+      { $sort: { [sortBy]:sort} },
       { $skip: (page - 1) * limit },
       { $limit: limit }
      ];

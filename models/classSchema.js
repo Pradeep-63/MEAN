@@ -10,7 +10,7 @@ const classSchema = new mongoose.Schema({
         required: true 
         }, // Teacher assigned to the class
     studentIds:[
-        { 
+        {   
             type: mongoose.Schema.Types.ObjectId, 
             ref: 'User'
          }

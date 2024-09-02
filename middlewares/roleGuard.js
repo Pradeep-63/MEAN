@@ -5,14 +5,13 @@ const User = require('../models/userSchema')
 require('dotenv').config()
 const auth=async (req,res,next)=>{
     try {
-        const token=req.cookies.token
+        const token=req.header("Authorization").replace("Bearer ","")
         if(!token){
-            return apiResponse(res,StatusCodes.FORBIDDEN,"token is missing",null,"token missing")
+            return apiResponse(res,StatusCodes.UNAUTHORIZED,"token is missing",null,"token missing")
         }
         const decodedToken=Jwt.verify(token,process.env.SECRET_KEY)
         console.log(decodedToken);
         const user=await User.findById(decodedToken.id)
-        console.log(user);
         req.user=decodedToken
         next()
         
