@@ -10,6 +10,7 @@ const parent=require('./routes/parent')
 const student=require('./routes/student')
 app.use(express.json())
 const PORT = process.env.PORT || 4000;
+
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 app.use("/api/v1",admin)
